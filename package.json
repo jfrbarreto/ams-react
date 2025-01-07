@@ -4,7 +4,8 @@
   "description": "AMS-REACT",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
+    "academy": "cross-env APP=academy webpack serve",
+    "shop": "cross-env APP=shop webpack serve",
     "build": "npm run prettier && webpack",
     "prettier": "prettier --write . --log-level warn",
     "eslint": "eslint src/** --fix"
@@ -23,7 +24,9 @@
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
     "@typescript-eslint/eslint-plugin": "8.18.1",
+    "cross-env": "^7.0.3",
     "css-loader": "7.1.2",
+    "dotenv-webpack": "^8.1.0",
     "eslint": "8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "html-webpack-plugin": "5.6.3",

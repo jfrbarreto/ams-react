@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Frame } from "./ui/frame";
 
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
-import { Component } from "./ams-academy/component";
+import { Frame } from "../ui/frame";
+import { Component } from "./component";
 
-export function Router() {
+console.log("aaa", process.env.ENV_TTT);
+
+export function AcademyRouter() {
   return (
     <MantineProvider defaultColorScheme={"dark"}>
       <BrowserRouter basename={"/"}>
