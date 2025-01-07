@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 
-import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
-import { Frame } from "../ui/frame";
 import { Component } from "./component";
+import { Frame } from "./frame";
+import { ProductExample } from "./product-example/home";
 
-console.log("aaa", process.env.ENV_TTT);
+import "@mantine/core/styles.css";
 
 export function AcademyRouter() {
   return (
@@ -14,7 +14,7 @@ export function AcademyRouter() {
         <Routes>
           <Route path="/" element={<Frame />}>
             <Route path={"/component"} element={<Component text={"LABEL"} />} />
-            <Route path={"/other"} element={<p>OTHER ROUTE</p>} />
+            <Route path={"/product"} element={<ProductExample />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -7,14 +7,14 @@ export function Frame() {
     navigate("/component");
   };
 
-  const navigateToOther = () => {
-    navigate("/other");
+  const navigateToProduct = () => {
+    navigate("/product");
   };
 
   return (
     <div>
       <button onClick={navigateToComponent}>Component</button>
-      <button onClick={navigateToOther}>Other</button>
+      <button onClick={navigateToProduct}>Product</button>
       <div>
         <Outlet />
       </div>
