@@ -1,3 +1,4 @@
+import { Space } from "@mantine/core";
 import { Outlet, useNavigate } from "react-router";
 
 export function Frame() {
@@ -10,12 +11,22 @@ export function Frame() {
   const navigateToProduct = () => {
     navigate("/product");
   };
+  const navigateToReactHooks = () => {
+    navigate("/react-hooks");
+  };
+
+  const navigateToStateManagers = () => {
+    navigate("/state-managers");
+  };
 
   return (
     <div>
       <button onClick={navigateToComponent}>Component</button>
       <button onClick={navigateToProduct}>Product</button>
+      <button onClick={navigateToReactHooks}>React Hooks</button>
+      <button onClick={navigateToStateManagers}>State Managers</button>
       <div>
+        <Space h={48} />
         <Outlet />
       </div>
     </div>

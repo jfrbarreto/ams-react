@@ -12,3 +12,9 @@ interface ProductReview {
   reviewerEmail: string;
   reviewerName: string;
 }
+
+export type StoreSet = <A extends string | { type: string }>(
+  partial: any,
+  replace?: boolean | undefined,
+  action?: A | undefined
+) => void;
