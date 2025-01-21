@@ -8,6 +8,7 @@ import { ProductExample } from "./product-example/home";
 import "@mantine/core/styles.css";
 import { ReactHooks } from "./react-hooks/react-hooks";
 import { StateManagers } from "./state-managers/@main";
+import { ReactAdvanced } from "./advanced/react-advanced";
 
 export function AcademyRouter() {
   return (
@@ -19,6 +20,7 @@ export function AcademyRouter() {
             <Route path={"/product"} element={<ProductExample />} />
             <Route path={"/react-hooks"} element={<ReactHooks />} />
             <Route path={"/state-managers"} element={<StateManagers />} />
+            <Route path={"/react-advanced"} element={<ReactAdvanced />} />
           </Route>
         </Routes>
       </BrowserRouter>
