@@ -9,6 +9,7 @@ import "@mantine/core/styles.css";
 import { ReactHooks } from "./react-hooks/react-hooks";
 import { StateManagers } from "./state-managers/@main";
 import { ReactAdvanced } from "./advanced/react-advanced";
+import { ReactStyling } from "./styling-examples/main";
 
 export function AcademyRouter() {
   return (
@@ -21,6 +22,7 @@ export function AcademyRouter() {
             <Route path={"/react-hooks"} element={<ReactHooks />} />
             <Route path={"/state-managers"} element={<StateManagers />} />
             <Route path={"/react-advanced"} element={<ReactAdvanced />} />
+            <Route path={"/react-styling"} element={<ReactStyling />} />
           </Route>
         </Routes>
       </BrowserRouter>

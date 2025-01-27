@@ -22,6 +22,9 @@ export function Frame() {
   const navigateToReactAdvanced = () => {
     navigate("/react-advanced");
   };
+  const navigateToReactStyling = () => {
+    navigate("/react-styling");
+  };
 
   return (
     <div>
@@ -30,6 +33,7 @@ export function Frame() {
       <button onClick={navigateToReactHooks}>React Hooks</button>
       <button onClick={navigateToStateManagers}>State Managers</button>
       <button onClick={navigateToReactAdvanced}>React Advanced</button>
+      <button onClick={navigateToReactStyling}>React Styling</button>
       <div>
         <Space h={48} />
         <Outlet />
