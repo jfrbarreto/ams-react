@@ -1,4 +1,4 @@
-import React, { type ChangeEvent, useMemo, useState } from "react";
+import { type ChangeEvent, useMemo, useState } from "react";
 import * as jsonTable from "../mock_table/table_10000.json";
 import type { TableItems } from "../types";
 

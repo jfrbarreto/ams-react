@@ -1,5 +1,5 @@
 import { Box, Button } from "@mantine/core";
-import { getExample_3Store, useExample_3Store } from "../example_3.store";
+import { useExample_3Store } from "../example_3.store";
 
 export const Button2 = () => {
 	// reactive

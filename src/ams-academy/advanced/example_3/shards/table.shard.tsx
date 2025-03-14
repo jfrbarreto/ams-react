@@ -1,8 +1,7 @@
 import { Table as MantineTable } from "@mantine/core";
-import React, { type ReactNode, useMemo } from "react";
+import type { ReactNode } from "react";
 import * as jsonTable from "../../mock_table/table_10000.json";
 import type { TableItems } from "../../types";
-import { useExample_3Store } from "../example_3.store";
 
 export const Table = () => {
 	const table = JSON.parse(JSON.stringify(jsonTable)).default;

@@ -1,5 +1,5 @@
 import { Box, Button, Input, Space } from "@mantine/core";
-import React, { type ChangeEvent, type FC } from "react";
+import type { ChangeEvent, FC } from "react";
 
 interface FormProps {
 	input1: string;

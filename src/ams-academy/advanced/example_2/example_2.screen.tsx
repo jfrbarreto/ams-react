@@ -1,5 +1,4 @@
 import { Box, Space } from "@mantine/core";
-import React from "react";
 import { Form } from "./blocks/form";
 import { Table } from "./blocks/table";
 import { useExample2Helper } from "./example_2.helper";

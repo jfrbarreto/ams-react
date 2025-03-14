@@ -1,5 +1,5 @@
 import { Box, Button } from "@mantine/core";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const Button1 = () => {
 	const [button1, setButton1] = useState<string>("ON");

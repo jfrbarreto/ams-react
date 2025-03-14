@@ -1,5 +1,5 @@
 import { Box, Button, Input, Space, Table } from "@mantine/core";
-import React, { type ChangeEvent, useState } from "react";
+import { type ChangeEvent, useState } from "react";
 import * as jsonTable from "../mock_table/table_10000.json";
 import type { TableItems } from "../types";
 
