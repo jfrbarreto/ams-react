@@ -1,37 +1,38 @@
 import { useState } from "react";
-import { Product } from "./types";
+import type { Product } from "./types";
 
 export const useGlobalState = () => {
-  const [productList, _setProductList] = useState<Product[]>();
-  const [cartItems, _setCartItems] = useState<(number | undefined)[]>([]);
+	const [productList, _setProductList] = useState<Product[]>();
+	const [cartItems, _setCartItems] = useState<(number | undefined)[]>([]);
 
-  const setProductList = (products: Product[]) => {
-    _setProductList(products);
-  };
+	const setProductList = (products: Product[]) => {
+		_setProductList(products);
+	};
 
-  const addProductToCart = (id: number | undefined) => {
-    _setCartItems((currentState) => [...currentState, id]);
-  };
+	const addProductToCart = (id: number | undefined) => {
+		_setCartItems((currentState) => [...currentState, id]);
+	};
 
-  const cartCount = cartItems.length;
+	const cartCount = cartItems.length;
 
-  const buildCheckoutProductList = () => {
-    const checkoutProductList: (Product | undefined)[] = [];
+	const buildCheckoutProductList = () => {
+		const checkoutProductList: (Product | undefined)[] = [];
 
-    cartItems.forEach((productID) => {
-      checkoutProductList.push(
-        productList?.filter((product) => product.id === productID)[0]
-      );
-    });
+		// biome-ignore lint/complexity/noForEach: <explanation>
+		cartItems.forEach((productID) => {
+			checkoutProductList.push(
+				productList?.filter((product) => product.id === productID)[0],
+			);
+		});
 
-    return checkoutProductList;
-  };
+		return checkoutProductList;
+	};
 
-  return {
-    productList,
-    setProductList,
-    addProductToCart,
-    cartCount,
-    buildCheckoutProductList
-  };
+	return {
+		productList,
+		setProductList,
+		addProductToCart,
+		cartCount,
+		buildCheckoutProductList,
+	};
 };

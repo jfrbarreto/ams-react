@@ -1,21 +1,22 @@
-import { Product } from "./types";
+import type { Product } from "./types";
 
 export async function getProductList(): Promise<Product[]> {
-  const rawProductList: Product[] = [];
-  const rawResult = await fetch("https://dummyjson.com/products");
+	const rawProductList: Product[] = [];
+	const rawResult = await fetch("https://dummyjson.com/products");
 
-  const JSON = await rawResult.json();
+	const JSONList = await rawResult.json();
 
-  JSON.products.forEach((element: Product) => {
-    rawProductList.push({
-      id: element.id,
-      title: element.title,
-      description: element.description,
-      price: element.price,
-      reviews: element.reviews,
-      thumbnail: element.thumbnail
-    });
-  });
+	// biome-ignore lint/complexity/noForEach: <explanation>
+	JSONList.products.forEach((element: Product) => {
+		rawProductList.push({
+			id: element.id,
+			title: element.title,
+			description: element.description,
+			price: element.price,
+			reviews: element.reviews,
+			thumbnail: element.thumbnail,
+		});
+	});
 
-  return rawProductList;
+	return rawProductList;
 }

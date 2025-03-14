@@ -1,23 +1,23 @@
-import { Product } from "./product";
 import { delay } from "../helpers-and-hooks";
+import type { Product } from "./product";
 
 export async function getProductAsyncAwait(): Promise<Product> {
-  const rawResult = await fetch("https://dummyjson.com/products/1");
+	const rawResult = await fetch("https://dummyjson.com/products/1");
 
-  // Promise based
-  //  return fetch('https://dummyjson.com/products')
-  //       .then(res => res.json())
-  //       .then(console.log);
+	// Promise based
+	//  return fetch('https://dummyjson.com/products')
+	//       .then(res => res.json())
+	//       .then(console.log);
 
-  await delay(750);
+	await delay(750);
 
-  const JSON = await rawResult.json();
+	const JSONList = await rawResult.json();
 
-  return {
-    title: JSON.title,
-    description: JSON.description,
-    price: JSON.price,
-    reviews: JSON.reviews,
-    thumbnail: JSON.thumbnail
-  };
+	return {
+		title: JSONList.title,
+		description: JSONList.description,
+		price: JSONList.price,
+		reviews: JSONList.reviews,
+		thumbnail: JSONList.thumbnail,
+	};
 }

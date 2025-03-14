@@ -1,17 +1,17 @@
 import { produce } from "immer";
 import { create } from "zustand";
-import { StoreSet } from "../../../ams-shop-exercise/lib/types";
+import type { StoreSet } from "../../../ams-shop-exercise/lib/types";
 
 /*----------------------------------------------------------------------------*/
 /* Example_3 # State
 /*----------------------------------------------------------------------------*/
 
 interface State {
-  searchString: string;
+	searchString: string;
 }
 
 const initialState: State = {
-  searchString: ""
+	searchString: "",
 };
 
 /*----------------------------------------------------------------------------*/
@@ -19,27 +19,27 @@ const initialState: State = {
 /*----------------------------------------------------------------------------*/
 
 interface Mutations {
-  setSearchString(o: string): void;
-  reset(): void;
+	setSearchString(o: string): void;
+	reset(): void;
 }
 
 function mutations(set: StoreSet): Mutations {
-  function setSearchString(o: string) {
-    set(
-      produce((state: State) => {
-        state.searchString = o;
-      })
-    );
-  }
+	function setSearchString(o: string) {
+		set(
+			produce((state: State) => {
+				state.searchString = o;
+			}),
+		);
+	}
 
-  function reset() {
-    set(initialState);
-  }
+	function reset() {
+		set(initialState);
+	}
 
-  return {
-    setSearchString,
-    reset
-  };
+	return {
+		setSearchString,
+		reset,
+	};
 }
 
 /*----------------------------------------------------------------------------*/
@@ -49,8 +49,8 @@ function mutations(set: StoreSet): Mutations {
 interface Store extends State, Mutations {}
 
 export const useExample_3Store = create<Store>()((set) => ({
-  ...initialState,
-  ...mutations(set)
+	...initialState,
+	...mutations(set),
 }));
 
 export const getExample_3Store = () => useExample_3Store.getState();
