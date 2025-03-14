@@ -21,10 +21,11 @@ export const useExample2Helper = () => {
 		});
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	const handleButton2 = () => console.log(input1, input2);
+
 	const table = useMemo(() => {
 		return JSON.parse(JSON.stringify(jsonTable)).default;
-	}, [jsonTable]);
+	}, []);
 
 	const rows = useMemo(() => {
 		return table.map((element: TableItems) => (
@@ -46,6 +47,7 @@ export const useExample2Helper = () => {
 		handleInput1,
 		handleInput2,
 		handleButton1,
+		handleButton2,
 		rows,
 	};
 };

@@ -7,11 +7,13 @@ import type { StoreSet } from "../../../ams-shop-exercise/lib/types";
 /*----------------------------------------------------------------------------*/
 
 interface State {
-	searchString: string;
+	input1: string;
+	input2: string;
 }
 
 const initialState: State = {
-	searchString: "",
+	input1: "",
+	input2: "",
 };
 
 /*----------------------------------------------------------------------------*/
@@ -19,15 +21,24 @@ const initialState: State = {
 /*----------------------------------------------------------------------------*/
 
 interface Mutations {
-	setSearchString(o: string): void;
+	setInput1(o: string): void;
+	setInput2(o: string): void;
 	reset(): void;
 }
 
 function mutations(set: StoreSet): Mutations {
-	function setSearchString(o: string) {
+	function setInput1(o: string) {
 		set(
 			produce((state: State) => {
-				state.searchString = o;
+				state.input1 = o;
+			}),
+		);
+	}
+
+	function setInput2(o: string) {
+		set(
+			produce((state: State) => {
+				state.input2 = o;
 			}),
 		);
 	}
@@ -37,7 +48,8 @@ function mutations(set: StoreSet): Mutations {
 	}
 
 	return {
-		setSearchString,
+		setInput1,
+		setInput2,
 		reset,
 	};
 }

@@ -5,12 +5,9 @@ import type { TableItems } from "../../types";
 import { useExample_3Store } from "../example_3.store";
 
 export const Table = () => {
-	const searchString = useExample_3Store((state) => state.searchString);
-
 	const table = JSON.parse(JSON.stringify(jsonTable)).default;
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	const rows: ReactNode = useMemo(() => {
+	function rows(): ReactNode {
 		return table.map((element: TableItems) => (
 			<tr key={element._id}>
 				<td>{element.name}</td>
@@ -21,7 +18,7 @@ export const Table = () => {
 				<td>{element.favoriteFruit}</td>
 			</tr>
 		));
-	}, [table.length]);
+	}
 
 	return (
 		<>
@@ -36,21 +33,8 @@ export const Table = () => {
 						<th>Favorite Fruit</th>
 					</tr>
 				</thead>
-				<tbody>{rows}</tbody>
+				<tbody>{rows()}</tbody>
 			</MantineTable>
 		</>
 	);
 };
-
-// const rows: ReactNode = useMemo(() => {
-//   return table.map((element: TableItems) => (
-//     <tr key={element._id}>
-//       <td>{element.name}</td>
-//       <td>{element.age}</td>
-//       <td>{element.gender}</td>
-//       <td>{element.eyeColor}</td>
-//       <td>{element.email}</td>
-//       <td>{element.favoriteFruit}</td>
-//     </tr>
-//   ));
-// }, [table]);

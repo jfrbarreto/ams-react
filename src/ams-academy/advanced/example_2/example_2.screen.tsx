@@ -13,6 +13,7 @@ export const Example_2 = () => {
 		handleInput1,
 		handleInput2,
 		handleButton1,
+		handleButton2,
 	} = useExample2Helper();
 	return (
 		<Box style={{ padding: "64px" }}>
@@ -23,6 +24,7 @@ export const Example_2 = () => {
 				handleInput1={handleInput1}
 				handleInput2={handleInput2}
 				handleButton1={handleButton1}
+				handleButton2={handleButton2}
 			/>
 			<Space h={32} />
 			<Table rows={rows} />

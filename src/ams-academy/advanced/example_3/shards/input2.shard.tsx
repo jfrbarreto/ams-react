@@ -1,22 +1,18 @@
 import { Box, Input } from "@mantine/core";
-import React, { type ChangeEvent } from "react";
+import type { ChangeEvent } from "react";
 import { useExample_3Store } from "../example_3.store";
 
 export const Input2 = () => {
-	const searchString = useExample_3Store((state) => state.searchString);
-	const setSearchString = useExample_3Store((state) => state.setSearchString);
+	const input2 = useExample_3Store((state) => state.input2);
+	const setInput2 = useExample_3Store((state) => state.setInput2);
 
 	const handleInput2 = (event: ChangeEvent<HTMLInputElement>) =>
-		setSearchString(event.currentTarget.value);
+		setInput2(event.currentTarget.value);
 
 	return (
 		<>
 			<Box>
-				<Input
-					placeholder="input #2"
-					value={searchString}
-					onChange={handleInput2}
-				/>
+				<Input placeholder="input #2" value={input2} onChange={handleInput2} />
 			</Box>
 		</>
 	);

@@ -8,6 +8,7 @@ interface FormProps {
 	handleInput1(event: ChangeEvent<HTMLInputElement>): void;
 	handleInput2(event: ChangeEvent<HTMLInputElement>): void;
 	handleButton1(): void;
+	handleButton2(): void;
 }
 
 export const Form: FC<FormProps> = ({
@@ -17,6 +18,7 @@ export const Form: FC<FormProps> = ({
 	handleInput1,
 	handleInput2,
 	handleButton1,
+	handleButton2,
 }) => {
 	return (
 		<>
@@ -31,6 +33,12 @@ export const Form: FC<FormProps> = ({
 			<Box>
 				<Button variant={"outline"} onClick={handleButton1}>
 					{button1}
+				</Button>
+			</Box>
+			<Space h={32} />
+			<Box>
+				<Button variant={"filled"} onClick={handleButton2}>
+					Submit
 				</Button>
 			</Box>
 		</>

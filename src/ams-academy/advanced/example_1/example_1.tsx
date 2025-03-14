@@ -16,6 +16,7 @@ export const Example_1 = () => {
 		setButton1((prevState) => {
 			return prevState === "OFF" ? "ON" : "OFF";
 		});
+	const handleButton2 = () => console.log(input1, input2);
 
 	const table = JSON.parse(JSON.stringify(jsonTable)).default;
 
@@ -38,9 +39,9 @@ export const Example_1 = () => {
 			<Space h={32} />
 			<Button variant={"outline"} onClick={handleButton1}>
 				{button1}
-				<Space h={32} />
 			</Button>
-			<Button variant={"outline"} onClick={handleButton1}>
+			<Space h={32} />
+			<Button variant={"filled"} onClick={handleButton2}>
 				Submit
 			</Button>
 			<Space h={32} />
